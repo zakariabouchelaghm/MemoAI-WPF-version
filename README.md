@@ -33,4 +33,4 @@ The backend is designed for speed, portability, and a minimal footprint:
 
 1. **Prerequisites:** Visual Studio with the ".NET Desktop Development" workload installed.
 2. **Clone the Repo:** ```bash
-   git clone [https://github.com/your-username/MemoAI.git](https://github.com/your-username/MemoAI.git)
+   git clone [[https://github.com/your-username/MemoAI.git](https://github.com/zakariabouchelaghm/MemoAI-WPF-version)]
