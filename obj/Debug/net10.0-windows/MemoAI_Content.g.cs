@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/smart_memo.ico")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("memoembed.sqlite")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("sqlite-vec.dll")]
 

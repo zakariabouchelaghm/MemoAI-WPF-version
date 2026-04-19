@@ -195,6 +195,11 @@ namespace MemoAI
 
         // Placeholders pour tes futurs besoins
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e) { }
-        private void TextBox_MouseDoubleClick(object sender, MouseButtonEventArgs e) { }
+        private void TextBox_MouseDoubleClick(object sender, MouseButtonEventArgs e) {
+            if (sender is TextBox textBox)
+            {
+                textBox.SelectAll();
+            }
+        }
     }
 }

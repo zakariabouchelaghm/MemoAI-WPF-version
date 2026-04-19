@@ -261,7 +261,7 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
-                        <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="txtSearch" TextChanged="txtSearch_TextChanged" Height="25" VerticalContentAlignment="Center" Tag="Search notes..."  BorderThickness="0" />
+                        <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="txtSearch" TextChanged="txtSearch_TextChanged" Height="25" VerticalContentAlignment="Center" Tag="Search notes..."  BorderThickness="0" MouseDoubleClick="TextBox_MouseDoubleClick" />
                         <Button  x:Name="btnSearch" Style="{DynamicResource SearchButtonStyle}" 
         Grid.Column="1" 
         
@@ -299,11 +299,18 @@
             Margin="0,0,0,0" 
             Padding="5,5" 
             Width="190"
+            Height="100"                        
             BorderBrush="#E3E3E3" 
             BorderThickness="0">
 
-                                <StackPanel Margin="5">
-                                    <Border BorderBrush="#E3E3E3" BorderThickness="0,0,0,0" Padding="0,0,0,5" Margin="0,0,0,5">
+                                <Grid Margin="5">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+
+                                    <Border Grid.Row="0" BorderBrush="#E3E3E3" BorderThickness="0,0,0,0" Padding="0,0,0,2" Margin="0,0,0,2">
                                         <Grid>
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="*" />
@@ -311,41 +318,42 @@
                                             </Grid.ColumnDefinitions>
 
                                             <TextBlock Text="{Binding TitleText}" 
-                               Grid.Column="0"
-                               FontWeight="SemiBold" 
-                               FontSize="14" 
-                               Foreground="#212529" 
-                               VerticalAlignment="Center"
-                               TextTrimming="CharacterEllipsis"
-                               Margin="0,0,5,0"/>
+                       FontWeight="SemiBold" 
+                       FontSize="14" 
+                       Foreground="#212529" 
+                       VerticalAlignment="Center"
+                       TextTrimming="CharacterEllipsis"/>
 
                                             <Button x:Name="DeleteBtn" 
-                            Click="Delete"
-                            Grid.Column="1"
-                            Content="×" 
-                            Width="22" 
-                            Height="22"
-                            FontSize="14"
-                            Opacity="0" 
-                            VerticalAlignment="Center"
-                            Style="{StaticResource SearchButtonStyle}" 
-                            Cursor="Hand" />
+                    Grid.Column="1"
+                    Click="Delete"
+                    Content="×" 
+                    Width="22" 
+                    Height="22"
+                    FontSize="14"
+                    Opacity="0" 
+                    VerticalAlignment="Center"
+                    Style="{StaticResource SearchButtonStyle}" 
+                    Cursor="Hand" />
                                         </Grid>
                                     </Border>
 
-                                    <TextBlock Text="{Binding PreviewText}" 
-                       FontSize="12" 
-                       Foreground="#5F6368" 
-                       MaxHeight="35" 
-                       TextWrapping="Wrap" 
-                       TextTrimming="CharacterEllipsis"
-                       Margin="0,0,0,5"/>
+                                    <TextBlock Grid.Row="1"
+               Text="{Binding NoteText}" 
+               FontSize="12" 
+               Foreground="#5F6368" 
+               TextWrapping="Wrap" 
+               TextTrimming="CharacterEllipsis"
+               VerticalAlignment="Top"
+               Margin="0,2,0,2"/>
 
-                                    <TextBlock Text="{Binding Date}" 
-                       FontSize="10" 
-                       Foreground="DarkGray" 
-                       HorizontalAlignment="Right"/>
-                                </StackPanel>
+                                    <TextBlock Grid.Row="2"
+               Text="{Binding Date}" 
+               FontSize="10" 
+               Foreground="DarkGray" 
+               HorizontalAlignment="Right"
+               VerticalAlignment="Bottom"/>
+                                </Grid>
                             </Border>
 
                             <DataTemplate.Triggers>
@@ -428,7 +436,8 @@
                  FontSize="30" 
                  FontWeight="Bold"
                  Padding="10,2" 
-                 BorderBrush="Transparent"/>
+                 BorderBrush="Transparent"
+                 MouseDoubleClick="TextBox_MouseDoubleClick"/>
 
                 <TextBox x:Name="DateEditor" 
                  Grid.Column="1" 
@@ -439,6 +448,7 @@
                  VerticalAlignment="Bottom"
                  Margin="10,0,10,12" 
                  BorderBrush="Transparent"
+                 MouseDoubleClick="TextBox_MouseDoubleClick"
                  IsReadOnly="True" 
                  Focusable="False" 
                  Cursor="Arrow"/>

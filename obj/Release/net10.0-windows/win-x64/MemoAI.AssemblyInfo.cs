@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MemoAI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b586af371a50e549e7dfee18539c4a313c619378")]
 [assembly: System.Reflection.AssemblyProductAttribute("MemoAI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MemoAI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
